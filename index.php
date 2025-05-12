@@ -89,6 +89,29 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
+
+                                   <?php 
+
+                                      include "connect.php";
+
+                                      $sql = "SELECT * FROM `students`";
+
+                                      $result = mysqli_query($conn,$sql);
+
+                                      if($result){
+                                         $students = mysqli_fetch_all($result,MYSQLI_ASSOC);
+
+                                         echo "<pre>";
+
+                                         print_r($students);
+
+                                         echo "</pre>";
+                                      }else{
+                                        $students = [];
+                                      }
+                                   ?>
+
                                     <tr>
                                         <td>
                                             <div class="form-check">
@@ -117,118 +140,7 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td>2</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="student-avatar me-2">JS</div>
-                                                <span>Jane Smith</span>
-                                            </div>
-                                        </td>
-                                        <td><span class="gender-badge gender-female">Female</span></td>
-                                        <td>456 Oak Ave, Somewhere</td>
-                                        <td>555-987-6543</td>
-                                        <td>jane.smith@example.com</td>
-                                        <td>May 6, 2025</td>
-                                        <td>
-                                           
-                                            <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger action-btn" data-bs-toggle="modal" data-bs-target="#deleteStudentModal">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td>3</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="student-avatar me-2">RJ</div>
-                                                <span>Robert Johnson</span>
-                                            </div>
-                                        </td>
-                                        <td><span class="gender-badge gender-male">Male</span></td>
-                                        <td>789 Pine Rd, Elsewhere</td>
-                                        <td>555-456-7890</td>
-                                        <td>robert.j@example.com</td>
-                                        <td>May 5, 2025</td>
-                                        <td>
-                                           
-                                            <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger action-btn" data-bs-toggle="modal" data-bs-target="#deleteStudentModal">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td>4</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="student-avatar me-2">EW</div>
-                                                <span>Emily Wilson</span>
-                                            </div>
-                                        </td>
-                                        <td><span class="gender-badge gender-female">Female</span></td>
-                                        <td>321 Elm St, Nowhere</td>
-                                        <td>555-789-0123</td>
-                                        <td>emily.w@example.com</td>
-                                        <td>May 4, 2025</td>
-                                        <td>
-                                           
-                                            <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger action-btn" data-bs-toggle="modal" data-bs-target="#deleteStudentModal">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td>5</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="student-avatar me-2">AT</div>
-                                                <span>Alex Taylor</span>
-                                            </div>
-                                        </td>
-                                        <td><span class="gender-badge gender-other">Other</span></td>
-                                        <td>654 Cedar Ln, Anywhere</td>
-                                        <td>555-234-5678</td>
-                                        <td>alex.t@example.com</td>
-                                        <td>May 3, 2025</td>
-                                        <td>
-                                           
-                                            <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger action-btn" data-bs-toggle="modal" data-bs-target="#deleteStudentModal">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
