@@ -110,36 +110,41 @@
                                       }else{
                                         $students = [];
                                       }
+
+
+                                    foreach($students as $student){
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox">
+                                                </div>
+                                            </td>
+                                            <td>1</td>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <span><?php echo $student['name'] ?></span>
+                                                </div>
+                                            </td>
+                                            <td><span class="gender-badge gender-male">Male</span></td>
+                                            <td>123 Main St, Anytown</td>
+                                            <td>555-123-4567</td>
+                                            <td>john.doe@example.com</td>
+                                            <td>May 7, 2025</td>
+                                            <td>
+                                            
+                                                <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-outline-danger action-btn" data-bs-toggle="modal" data-bs-target="#deleteStudentModal">
+                                                    <i class="bi bi-trash"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
                                    ?>
 
-                                    <tr>
-                                        <td>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="checkbox">
-                                            </div>
-                                        </td>
-                                        <td>1</td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="student-avatar me-2">JD</div>
-                                                <span>John Doe</span>
-                                            </div>
-                                        </td>
-                                        <td><span class="gender-badge gender-male">Male</span></td>
-                                        <td>123 Main St, Anytown</td>
-                                        <td>555-123-4567</td>
-                                        <td>john.doe@example.com</td>
-                                        <td>May 7, 2025</td>
-                                        <td>
-                                           
-                                            <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger action-btn" data-bs-toggle="modal" data-bs-target="#deleteStudentModal">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
                                     
                                 </tbody>
                             </table>
