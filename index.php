@@ -108,9 +108,7 @@
                                         <td>john.doe@example.com</td>
                                         <td>May 7, 2025</td>
                                         <td>
-                                            <button class="btn btn-sm btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewStudentModal">
-                                                <i class="bi bi-eye"></i>
-                                            </button>
+                                           
                                             <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
                                                 <i class="bi bi-pencil"></i>
                                             </button>
@@ -138,9 +136,7 @@
                                         <td>jane.smith@example.com</td>
                                         <td>May 6, 2025</td>
                                         <td>
-                                            <button class="btn btn-sm btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewStudentModal">
-                                                <i class="bi bi-eye"></i>
-                                            </button>
+                                           
                                             <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
                                                 <i class="bi bi-pencil"></i>
                                             </button>
@@ -168,9 +164,7 @@
                                         <td>robert.j@example.com</td>
                                         <td>May 5, 2025</td>
                                         <td>
-                                            <button class="btn btn-sm btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewStudentModal">
-                                                <i class="bi bi-eye"></i>
-                                            </button>
+                                           
                                             <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
                                                 <i class="bi bi-pencil"></i>
                                             </button>
@@ -198,9 +192,7 @@
                                         <td>emily.w@example.com</td>
                                         <td>May 4, 2025</td>
                                         <td>
-                                            <button class="btn btn-sm btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewStudentModal">
-                                                <i class="bi bi-eye"></i>
-                                            </button>
+                                           
                                             <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
                                                 <i class="bi bi-pencil"></i>
                                             </button>
@@ -228,9 +220,7 @@
                                         <td>alex.t@example.com</td>
                                         <td>May 3, 2025</td>
                                         <td>
-                                            <button class="btn btn-sm btn-outline-primary action-btn" data-bs-toggle="modal" data-bs-target="#viewStudentModal">
-                                                <i class="bi bi-eye"></i>
-                                            </button>
+                                           
                                             <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
                                                 <i class="bi bi-pencil"></i>
                                             </button>
