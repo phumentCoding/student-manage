@@ -57,6 +57,7 @@
 
             <!-- Students Tab -->
             <div class="tab-pane fade show active" id="students">
+
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2>Student Management</h2>
                     <a href="create.php" class="btn btn-primary">
@@ -66,36 +67,7 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <div class="row g-3 mb-4">
-                            <div class="col-md-4">
-                                <div class="search-container">
-                                    <i class="bi bi-search"></i>
-                                    <input type="text" class="form-control search-input" placeholder="Search students...">
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <select class="form-select">
-                                    <option selected>Filter by Gender</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <select class="form-select">
-                                    <option selected>Sort by</option>
-                                    <option value="name_asc">Name (A-Z)</option>
-                                    <option value="name_desc">Name (Z-A)</option>
-                                    <option value="date_asc">Date Added (Oldest)</option>
-                                    <option value="date_desc">Date Added (Newest)</option>
-                                </select>
-                            </div>
-                            <div class="col-md-2">
-                                <button class="btn btn-outline-secondary w-100">
-                                    <i class="bi bi-funnel me-2"></i>Filter
-                                </button>
-                            </div>
-                        </div>
+                       
 
                         <div class="table-responsive">
                             <table class="table table-hover">
@@ -271,26 +243,7 @@
                             </table>
                         </div>
 
-                        <div class="d-flex justify-content-between align-items-center mt-4">
-                            <div>
-                                <span>Showing 1 to 5 of 1,248 entries</span>
-                            </div>
-                            <div>
-                                <nav>
-                                    <ul class="pagination mb-0">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                        </li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#">Next</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
