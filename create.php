@@ -1,3 +1,8 @@
+<?php
+   include "connect.php";
+
+   ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -66,7 +71,7 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <form action="store_student.php" method="POST">
+                        <form method="POST">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="fullName" class="form-label">Full Name</label>
@@ -93,10 +98,7 @@
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" id="email" name="email" class="form-control" required>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="date_added" class="form-label">Date Added</label>
-                                    <input type="date" id="date_added" name="date_added" class="form-control" required>
-                                </div>
+                                
                             </div>
 
                             <div class="mt-4">
@@ -105,6 +107,31 @@
                                 </button>
                             </div>
                         </form>
+
+
+                        <?php 
+                           if($_SERVER['REQUEST_METHOD'] === 'POST'){
+                               try{
+                                  $name = $_POST['name'];
+                                  $gender = $_POST['gender'];
+                                  $address = $_POST['address'];
+                                  $phone   = $_POST['phone'];
+                                  $email   = $_POST['email'];
+
+                                  $sql = "INSERT INTO `students`(`name`, `gender`, `address`, `phone`, `email`) VALUES ('$name','$gender','$address','$phone','$email')";
+
+                                  $result = mysqli_query($conn,$sql);
+
+                                  if($result){
+                                     header('location:index.php');
+                                  }
+
+                            
+                               }catch(Exception $e){
+                                 die('Error'. $e->getMessage());
+                               }
+                           }
+                        ?>
                     </div>
                 </div>
 

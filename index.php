@@ -102,11 +102,11 @@
                                       if($result){
                                          $students = mysqli_fetch_all($result,MYSQLI_ASSOC);
 
-                                         echo "<pre>";
+                                        //  echo "<pre>";
 
-                                         print_r($students);
+                                        //  print_r($students);
 
-                                         echo "</pre>";
+                                        //  echo "</pre>";
                                       }else{
                                         $students = [];
                                       }
@@ -120,17 +120,17 @@
                                                     <input class="form-check-input" type="checkbox">
                                                 </div>
                                             </td>
-                                            <td>1</td>
+                                            <td><?php echo $student['id'] ?></td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <span><?php echo $student['name'] ?></span>
                                                 </div>
                                             </td>
-                                            <td><span class="gender-badge gender-male">Male</span></td>
-                                            <td>123 Main St, Anytown</td>
-                                            <td>555-123-4567</td>
-                                            <td>john.doe@example.com</td>
-                                            <td>May 7, 2025</td>
+                                            <td><span class="gender-badge gender-male"><?php echo $student['gender'] ?></span></td>
+                                            <td><?php echo $student['address'] ?></td>
+                                            <td><?php echo $student['phone'] ?></td>
+                                            <td><?php echo $student['email'] ?></td>
+                                            <td><?php echo $student['created_at'] ?></td>
                                             <td>
                                             
                                                 <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
