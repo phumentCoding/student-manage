@@ -67,7 +67,7 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                       
+
 
                         <div class="table-responsive">
                             <table class="table table-hover">
@@ -91,29 +91,29 @@
                                 <tbody>
 
 
-                                   <?php 
+                                    <?php
 
-                                      include "connect.php";
+                                    include "connect.php";
 
-                                      $sql = "SELECT * FROM `students`";
+                                    $sql = "SELECT * FROM `students`";
 
-                                      $result = mysqli_query($conn,$sql);
+                                    $result = mysqli_query($conn, $sql);
 
-                                      if($result){
-                                         $students = mysqli_fetch_all($result,MYSQLI_ASSOC);
+                                    if ($result) {
+                                        $students = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
                                         //  echo "<pre>";
 
                                         //  print_r($students);
 
                                         //  echo "</pre>";
-                                      }else{
+                                    } else {
                                         $students = [];
-                                      }
+                                    }
 
 
-                                    foreach($students as $student){
-                                        ?>
+                                    foreach ($students as $student) {
+                                    ?>
                                         <tr>
                                             <td>
                                                 <div class="form-check">
@@ -132,25 +132,25 @@
                                             <td><?php echo $student['email'] ?></td>
                                             <td><?php echo $student['created_at'] ?></td>
                                             <td>
-                                            
-                                                <button class="btn btn-sm btn-outline-success action-btn" data-bs-toggle="modal" data-bs-target="#editStudentModal">
+
+                                                <button class="btn btn-sm btn-outline-success action-btn">
                                                     <i class="bi bi-pencil"></i>
                                                 </button>
-                                                <button class="btn btn-sm btn-outline-danger action-btn" data-bs-toggle="modal" data-bs-target="#deleteStudentModal">
+                                                <a href="index.php?id=<?php echo $student['id'] ?>" onclick="return confirm('Do you want to this?')" class="btn btn-sm btn-outline-danger action-btn" >
                                                     <i class="bi bi-trash"></i>
-                                                </button>
+                                                </a>
                                             </td>
                                         </tr>
-                                        <?php
+                                    <?php
                                     }
-                                   ?>
+                                    ?>
 
-                                    
+
                                 </tbody>
                             </table>
                         </div>
 
-                        
+
                     </div>
                 </div>
             </div>

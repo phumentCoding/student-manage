@@ -1,6 +1,5 @@
 <?php
    include "connect.php";
-
    ob_start();
 ?>
 <!DOCTYPE html>
