@@ -1,3 +1,7 @@
+<?php 
+   include "connect.php";
+   ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,7 +97,7 @@
 
                                     <?php
 
-                                    include "connect.php";
+                                    
 
                                     $sql = "SELECT * FROM `students`";
 
@@ -133,9 +137,9 @@
                                             <td><?php echo $student['created_at'] ?></td>
                                             <td>
 
-                                                <button class="btn btn-sm btn-outline-success action-btn">
+                                                <a href="edit.php?id=<?php echo $student['id'] ?>" class="btn btn-sm btn-outline-success action-btn">
                                                     <i class="bi bi-pencil"></i>
-                                                </button>
+                                                </a>
                                                 <a href="index.php?id=<?php echo $student['id'] ?>" onclick="return confirm('Do you want to this?')" class="btn btn-sm btn-outline-danger action-btn" >
                                                     <i class="bi bi-trash"></i>
                                                 </a>
@@ -153,7 +157,24 @@
 
                     </div>
                 </div>
+
             </div>
+
+
+            <?php 
+                 if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+
+                    $sql = "DELETE FROM students WHERE id = $id";
+
+                    $result = mysqli_query($conn,$sql);
+
+                    if($result){
+                        header('Location: index.php');
+                    }
+
+                 }
+            ?>
 
 
 
