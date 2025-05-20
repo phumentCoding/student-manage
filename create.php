@@ -70,7 +70,7 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <form method="POST">
+                        <form method="POST" enctype="multipart/form-data">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="fullName" class="form-label">Full Name</label>
@@ -93,9 +93,15 @@
                                     <label for="phone" class="form-label">Phone</label>
                                     <input type="tel" id="phone" name="phone" class="form-control" required>
                                 </div>
+
                                 <div class="col-md-6">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="image" class="form-label">Email</label>
+                                    <input type="file" id="image" name="image" class="form-control">
                                 </div>
                                 
                             </div>
@@ -110,12 +116,37 @@
 
                         <?php 
                            if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
                                try{
                                   $name = $_POST['name'];
                                   $gender = $_POST['gender'];
                                   $address = $_POST['address'];
                                   $phone   = $_POST['phone'];
                                   $email   = $_POST['email'];
+
+                                  
+
+                                  if(isset($_FILES['image'])){
+                                    //get image name from folder => phnom_penh.jpg
+                                    $file = $_FILES['image']['name'];
+
+
+                                    //get location(folder) of image 
+                                    $location = $_FILES['image']['tmp_name'];
+
+
+                                    //create random image name for image
+                                    $image = rand(000000,9999999) .'.'. pathinfo($file,PATHINFO_EXTENSION);
+
+                                            //545678.jpg
+
+                                    move_uploaded_file($location,"images/$image");
+
+                                  }else{
+
+                                    $image = '';
+
+                                  }
 
                                   $sql = "INSERT INTO `students`(`name`, `gender`, `address`, `phone`, `email`) VALUES ('$name','$gender','$address','$phone','$email')";
 

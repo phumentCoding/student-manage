@@ -63,15 +63,17 @@
 
                     try{
                         $id = $_GET['id'];
+
                         $sql = "SELECT * FROM students WHERE id = $id";
+
                         $result = mysqli_query($conn,$sql);
 
                         $student = mysqli_fetch_assoc($result);
 
 
-                        // echo "<pre>";
-                        // print_r($student);
-                        // echo "</pre>";
+                        echo "<pre>";
+                        print_r($student);
+                        echo "</pre>";
 
                     }catch(Exception $e){
                         echo "Error ". $e->getMessage();
