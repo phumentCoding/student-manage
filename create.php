@@ -148,7 +148,7 @@
 
                                   }
 
-                                  $sql = "INSERT INTO `students`(`name`, `gender`, `address`, `phone`, `email`) VALUES ('$name','$gender','$address','$phone','$email')";
+                                  $sql = "INSERT INTO `students`(`name`, `gender`, `address`, `phone`, `email`,`image`) VALUES ('$name','$gender','$address','$phone','$email','$image')";
 
                                   $result = mysqli_query($conn,$sql);
 
