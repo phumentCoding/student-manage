@@ -141,7 +141,7 @@
                                             //545678.jpg
 
                                     move_uploaded_file($location,"images/$image");
-
+ 
                                   }else{
 
                                     $image = '';
