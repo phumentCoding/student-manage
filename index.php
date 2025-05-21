@@ -83,6 +83,7 @@
                                             </div>
                                         </th>
                                         <th>ID</th>
+                                        <th>Profile</th>
                                         <th>Name</th>
                                         <th>Gender</th>
                                         <th>Address</th>
@@ -118,13 +119,16 @@
 
                                     foreach ($students as $student) {
                                     ?>
-                                        <tr>
+                                        <tr class="align-middle">
                                             <td>
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox">
                                                 </div>
                                             </td>
                                             <td><?php echo $student['id'] ?></td>
+                                            <td>
+                                                <img width="100" height="130" src="images/<?php echo $student['image'] ?>" alt="">
+                                            </td>
                                             <td>
                                                 <div class="d-flex align-items-center">
                                                     <span><?php echo $student['name'] ?></span>

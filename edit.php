@@ -71,9 +71,9 @@
                         $student = mysqli_fetch_assoc($result);
 
 
-                        echo "<pre>";
-                        print_r($student);
-                        echo "</pre>";
+                        // echo "<pre>";
+                        // print_r($student);
+                        // echo "</pre>";
 
                     }catch(Exception $e){
                         echo "Error ". $e->getMessage();
@@ -98,7 +98,7 @@
 
                 <div class="card mb-4">
                     <div class="card-body">
-                        <form method="POST">
+                        <form method="POST" enctype="multipart/form-data">
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label for="fullName" class="form-label">Full Name</label>
@@ -125,6 +125,13 @@
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" id="email" name="email" value="<?php echo $student['email'] ?>" class="form-control" required>
                                 </div>
+
+                                <div class="col-md-6">
+                                    <label for="image" class="form-label">Profile</label>
+                                    <input type="file" id="image" name="image" class="form-control">
+
+                                    <img class=" mt-3" width="100" height="120" src="images/<?php echo $student['image'] ?>" alt="">
+                                </div>
                                 
                             </div>
 
@@ -145,7 +152,29 @@
                                   $phone   = $_POST['phone'];
                                   $email   = $_POST['email'];
 
-                                  $sql = "UPDATE `students` SET `name`='$name',`gender`='$gender',`address`='$address',`phone`='$phone',`email`='$email' WHERE `id` = $id ";
+                                  //check if upload new image
+                                  if( isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK ){
+
+                                    //get image name from folder => phnom_penh.jpg
+                                    $file = $_FILES['image']['name'];
+                                    //get location(folder) of image 
+                                    $location = $_FILES['image']['tmp_name'];
+                                    //create random image name for image
+                                    $image = rand(000000,9999999) .'.'. pathinfo($file,PATHINFO_EXTENSION);
+
+                                    move_uploaded_file($location,"images/$image");
+
+                                  }
+
+                                  //if not upload new image
+                                  else{
+
+                                    // No new image uploaded, keep the old one
+                                    $image = $student['image'];
+                                    
+                                  }
+
+                                  $sql = "UPDATE `students` SET `name`='$name',`gender`='$gender',`address`='$address',`phone`='$phone',`email`='$email',`image`='$image' WHERE `id` = $id ";
 
                                   $result = mysqli_query($conn,$sql);
 
